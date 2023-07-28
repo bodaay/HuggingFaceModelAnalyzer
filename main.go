@@ -63,7 +63,7 @@ func main() {
 
 			// Fetch token from command line flag or from .env file if not provided in flag
 			if HuggingFaceAccessToken == "" {
-				HuggingFaceAccessToken = os.Getenv("HF_API_KEY")
+				HuggingFaceAccessToken = os.Getenv("HUGGING_FACE_HUB_TOKEN")
 			}
 			fmt.Println("Branch:", branch)
 			fmt.Println("Storage:", storage)
@@ -86,7 +86,7 @@ func main() {
 
 	rootCmd.Flags().StringVarP(&storage, "storage", "s", "Storage", "Storage path (optional)")
 
-	rootCmd.Flags().StringVarP(&HuggingFaceAccessToken, "token", "t", "", "HuggingFace Access Token, this can be automatically supplied by env variable 'HF_API_KEY' or .env file, required for some Models/Datasets, you still need to manually accept agreement if model requires it (optional)")
+	rootCmd.Flags().StringVarP(&HuggingFaceAccessToken, "token", "t", "", "HuggingFace Access Token, this can be automatically supplied by env variable 'HUGGING_FACE_HUB_TOKEN' or .env file, required for some Models/Datasets, you still need to manually accept agreement if model requires it (optional)")
 
 	rootCmd.Flags().BoolVarP(&install, "install", "i", false, "Install the binary to the OS default bin folder, Unix-like operating systems only")
 

@@ -45,4 +45,7 @@ type LLMPreTrainedModelQuantConfig struct {
 }
 
 type LLMPreTrainedModelFiles struct {
+	FileName string
+	FileSize int64
+	SHA256   string
 }
